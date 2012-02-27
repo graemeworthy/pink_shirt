@@ -2,6 +2,7 @@ class PinkShirt
   class SAX::Basic < SAX::Base
     TAGS = %w(strong b em i cite del ins sub sup span code)
     attr_accessor :nospan
+
     def start_strong attrs
       @output << "*"
       @output << add_attributes(attrs) if add_attributes(attrs)
@@ -11,7 +12,6 @@ class PinkShirt
 
     def end_strong
       @output << "*"
-
     end
 
     def start_b attrs

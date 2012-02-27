@@ -1,6 +1,7 @@
 class PinkShirt
   class SAX::BlockLevel < SAX::Base
     TAGS = %w(p br h1 h2 h3 h4 h5 h6 div blockquote)
+
     def start_p attrs
       @output << "p#{add_attributes(attrs)}. " if add_attributes(attrs)
     end

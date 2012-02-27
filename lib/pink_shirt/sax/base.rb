@@ -1,6 +1,7 @@
 class PinkShirt
   class SAX::Base
     TAGS = []
+
     def initialize(input, flags)
       @output = input
       @flags  = flags

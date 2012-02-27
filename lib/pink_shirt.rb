@@ -4,24 +4,23 @@ require 'nokogiri'
 # PinkShirt Undoes RedCloth
 # 
 #
-# Usage
-# ---------------------------------
-# html = "stuff <b>goood</b> stuff" 
-# PinkShirt.new('stuff').to_textile
+# = Usage
+#   html = "stuff <b>goood</b> stuff" 
+#   PinkShirt.new('stuff').to_textile
 #
-# Internals
-# ----------------------------------
+# = Internals
+# 
 # PinkShirt uses a sax parser built on nokogiri
-
-
+#
 class PinkShirt
-  
+  # @param html [String]
   def initialize(html)
     @html = html
     @sax_syntax = PinkShirt::SAX.new
     @parser     = Nokogiri::HTML::SAX::Parser.new(@sax_syntax)
   end
 
+  # renders to textile
   def to_textile
     @parser.parse(@html)do |config|
       config.replace_entities = false

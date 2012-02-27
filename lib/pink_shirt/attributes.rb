@@ -1,33 +1,34 @@
 class PinkShirt
-  # Attributes
-  # -------------------------
+  # = Attributes
+  # 
   # the sax parser passes an array of attributes along with each tag
   # attrs = ['href', 'http://www.example.com', 'style', 'background-color: snake;']
   #
   # Textile displays attributes in a certain way
   # 
-  # USAGE
-  # ---------------------------
+  # = USAGE
+  # 
   # Attributes.new(attrs).write
   #
+  # 
+  # * colspan=2                 => \2
+  # * rowspan=3                 => /3
+  # * style='padding-left:1em'  => (
+  # * style='padding-right:2em' => ))
+  # * style='text-align:right'  => >
+  # * style='text-align:left'   => <
+  # * style='text-align:center' => =
+  # * style='text-align:justify'=> <>
+  # * class = 'panthers'        => (panthers)
+  # * id = 'banner'             => (#banner)
+  # * class='this' id='that'    => (this#that)
+  # * lang='fr'                 => [fr]
+  # * style='color:red'         => {color:red}
   #
-  # colspan=2                 => \2
-  # rowspan=3                 => /3
-  # style='padding-left:1em'  => (
-  # style='padding-right:2em' => ))
-  # style='text-align:right'  => >
-  # style='text-align:left'   => <
-  # style='text-align:center' => =
-  # style='text-align:justify'=> <>
-  # class = 'panthers'        => (panthers)
-  # id = 'banner'             => (#banner)
-  # class='this' id='that'    => (this#that)
-  # lang='fr'                 => [fr]
-  # style='color:red'         => {color:red}
-  
-  
+  #
   class Attributes
-
+    # @param attrs [Array] formatted [key, value, key, value]
+    # 
     def initialize(attrs)
       @attrs = attrs
       @attrs_hash  = Hash[attrs]
@@ -44,7 +45,6 @@ class PinkShirt
       @styles_hash ||= {}
     end
 
-
     def write
       add = []
       add << colspan
@@ -56,11 +56,13 @@ class PinkShirt
       add << lang
       out = add.join
       return nil if out == ""
+      
       out
     end
 
     def parse_styles
       return nil unless attrs['style']
+      
       rules_list = attrs['style'].split(";").map{|rule|
         rule.split(":")
       }
@@ -89,13 +91,12 @@ class PinkShirt
       end
 
       nudges << text_align
-
       nudges
     end
 
     def steal_padding
-
       return nil unless attrs['style']
+      
       left = case styles.delete('padding-left')
       when '1em'; "(" ;
       when '2em'; "((";
@@ -111,11 +112,11 @@ class PinkShirt
       end
 
       padding = "#{left}#{right}"
-
     end
 
     def colspan
       return nil unless attrs['colspan']
+      
       width = attrs['colspan']
       colspan = ""
       colspan << "\\" #literal backslash
@@ -125,6 +126,7 @@ class PinkShirt
 
     def rowspan
       return nil unless attrs['rowspan']
+      
       height = attrs['rowspan']
       colspan = '/' + "#{height}" if height
     end
@@ -142,6 +144,7 @@ class PinkShirt
       klass = attrs['class']
       id    = attrs['id']
       return nil unless klass || id
+      
       output  = ""
       output += "("
       output += klass if klass
@@ -160,6 +163,7 @@ class PinkShirt
 
     def lang
       return nil unless attrs.include?('lang')
+      
       output  = ""
       output += "["
       output += attrs['lang']

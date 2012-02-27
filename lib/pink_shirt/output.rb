@@ -1,21 +1,23 @@
 class PinkShirt
-  # 
+
+  ##
   # Nokogiri::Sax builds output as a long stream.
   # Output collects all the writes as an array, and then joins them when required
   # you can also lock it for writing.
   # 
-  # Usage
-  # ------------------------
-  # stream = Output.new
-  # stream << 'goods... '
-  # stream.inspect #=> ['goods... ']
-  # stream.lock('suspicious tag')
-  # stream << 'bad stuff'
-  # stream.inspect #=> ['goods... ']
-  # stream.unlock
-  # stream << 'good again'
-  # stream.inspect #=> ['goods... ', 'good again']
+  # = Usage
+  # 
+  #  stream = Output.new
+  #  stream << 'goods... '
+  #  stream.inspect #=> ['goods... ']
+  #  stream.lock('suspicious tag')
+  #  stream << 'bad stuff'
+  #  stream.inspect #=> ['goods... ']
+  #  stream.unlock
+  #  stream << 'good again'
+  #  stream.inspect #=> ['goods... ', 'good again']
   #
+
   class Output
     def initialize
       @contents = []

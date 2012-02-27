@@ -1,6 +1,7 @@
 class PinkShirt
   class SAX::Images < SAX::Base
     TAGS = %(img)
+    
     def start_img attrs
       title   = attrs['alt'] || attrs['title']
       title   = nil if title == "" || title == " "
@@ -10,6 +11,7 @@ class PinkShirt
       image  += "!"
       @output << image
     end
+    
     def end_img
 
     end

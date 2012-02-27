@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.email       = ["graemeworthy@gmail.com"]
   s.homepage    = ""
   s.summary     = %q{An Html to Textile Converter}
-  s.description = %q{Converts Html to Textile, or as some say 'html2textile, it's built on nokogiri''}
+  s.description = %q{Converts Html to Textile, or as some say 'html2textile', it's built on nokogiri}
 
   s.rubyforge_project = "pink_shirt"
 

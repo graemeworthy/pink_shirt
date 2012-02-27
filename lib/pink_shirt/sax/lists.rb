@@ -1,11 +1,13 @@
 class PinkShirt
   class SAX::Lists < SAX::Base
     TAGS = %w(ul ol li dl dt dd)
+
     def initialize(*args)
       @last_depth = 0
       @nesting = []
       super
     end
+
     def start_ul(attrs)
       @nesting.push "ul"
       @in_ul = true

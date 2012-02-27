@@ -1,25 +1,23 @@
 class PinkShirt
   # Gets rid of smart quotes, dashes and some pesky unicode
-  # Usage
-  # ---------------------
-  # Entities.sanitize(input)
+  # = Usage
+  #   Entities.sanitize(input)
   #
   class Entities
     REPLACEMENTS = {
-      8217 => "'", #single quote
-      8216 => "'", #left single quote
-      8220 => '"', #right double quote
-      8221 => '"', #left double quote
-      8211 => "-", #endash
-      8212 => "--", #emdash
+      8217 => "'",   #single quote
+      8216 => "'",   #left single quote
+      8220 => '"',   #right double quote
+      8221 => '"',   #left double quote
+      8211 => "-",   #endash
+      8212 => "--",  #emdash
       8230 => "...", #ellipsis
-      215  => "x", #times
-      8242 => "'", #inch
+      215  => "x",   #times
+      8242 => "'",   #inch
       174  => "(r)", #registered trademark
-      8482 => "(tm)", # trademark
+      8482 => "(tm)",# trademark
       169  => "(c)", #copyright
     }
-
 
     def self.sanitize(string)
       string_chars =  string.unpack("U*")
