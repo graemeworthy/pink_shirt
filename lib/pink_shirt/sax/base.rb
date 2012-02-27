@@ -10,7 +10,6 @@ class PinkShirt
       PinkShirt::Attributes.new(attrs).write
     end
 
-
     def to_s
       @output
     end

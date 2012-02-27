@@ -23,6 +23,7 @@ class PinkShirt
     def end_th
     end
 
+    # | or |(someclass). , never |.
     def start_td attrs
       if add_attributes(attrs)
         @output << "|#{add_attributes(attrs)}. "

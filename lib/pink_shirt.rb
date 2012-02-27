@@ -1,7 +1,21 @@
 require 'nokogiri'
 
+# An html2textile converter
+# PinkShirt Undoes RedCloth
+# 
+#
+# Usage
+# ---------------------------------
+# html = "stuff <b>goood</b> stuff" 
+# PinkShirt.new('stuff').to_textile
+#
+# Internals
+# ----------------------------------
+# PinkShirt uses a sax parser built on nokogiri
+
 
 class PinkShirt
+  
   def initialize(html)
     @html = html
     @sax_syntax = PinkShirt::SAX.new

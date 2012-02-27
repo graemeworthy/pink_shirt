@@ -1,4 +1,5 @@
 class PinkShirt
+  
   class SAX::Preformatted < SAX::Base
     TAGS = %(pre)
     def start_pre attrs
