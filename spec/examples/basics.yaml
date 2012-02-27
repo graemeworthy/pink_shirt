@@ -1,0 +1,172 @@
+Headings:
+  desc: headers
+  textile: |-
+    h1. This is a Heading 1
+
+    h2. Heading 2 gets more specific
+  html: |-
+    <h1>This is a Heading 1</h1>
+
+    <h2>Heading 2 gets more specific</h2>
+
+Paragraphs:
+  desc: Paragraphs should all have the p.
+  textile: |-
+    this is just a normal paragraph
+  html: |-
+    <p>this is just a normal paragraph</p>
+UL Lists:
+  desc: a simple list
+  textile: |-
+    * 1
+    * 2
+  html: |-
+    <ul>
+      <li>1</li>
+      <li>2</li>
+    </ul>
+OL Lists:
+  desc: a simple list
+  textile: |-
+    # 1
+    # 2
+  html: |-
+    <ol>
+      <li>1</li>
+      <li>2</li>
+    </ol>
+Fonty Markup:
+  desc: bold italic and the rest
+  textile: |-
+    *b*
+    *strong*
+    ??cite??
+    _i_
+    _em_
+    -del-
+    +ins+
+    ~sub~
+    ^sup^
+    %span%
+    @code@
+  html: |-
+    <strong>b</strong><br />
+    <strong>strong</strong><br />
+    <cite>cite</cite><br />
+    <em>i</em><br />
+    <em>em</em><br />
+    <del>del</del><br />
+    <ins>ins</ins><br />
+    <sub>sub</sub><br />
+    <sup>sup</sup><br />
+    <span>span</span><br />
+    <code>code</code>
+
+Nested Lists:
+  desc: list nesting is hard
+  textile: |-
+    * 1
+    * 2
+    ** a
+    ** b
+    ** c
+    * 3
+  html: |-
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>
+        <ul>
+          <li>a</li>
+          <li>b</li>
+          <li>c</li>
+        </ul>
+      </li>
+      <li>3</li>
+    </ul>
+
+Nested Mixed Lists:
+ desc: mixed lists are easy
+ textile: |-
+      # 1
+      # 2
+      ** a
+      ** b
+      ** c
+      # 3
+ html: |-
+      <ol>
+        <li>1</li>
+        <li>2
+          <ul>
+            <li>a</li>
+            <li>b</li>
+            <li>c</li>
+          </ul>
+        <li>3</li>
+      </ol>
+
+Tables:
+  desc: plain Tables
+  textile: |-
+    |a|table|row|
+    |a|table|row|
+  html: |-
+    <table>
+      <tr>
+        <td>a</td>
+        <td>table</td>
+        <td>row</td>
+      </tr>
+      <tr>
+        <td>a</td>
+        <td>table</td>
+        <td>row</td>
+      </tr>
+    </table>
+
+Tables With headers:
+  desc: a table with a header
+  textile: |-
+    |_. a|_. table|_. header|
+    |a|table|row|
+    |a|table|row|
+  html: |-
+    <table>
+      <tr>
+        <th>a</th>
+        <th>table</th>
+        <th>header</th>
+      </tr>
+      <tr>
+        <td>a</td>
+        <td>table</td>
+        <td>row</td>
+      </tr>
+      <tr>
+        <td>a</td>
+        <td>table</td>
+        <td>row</td>
+      </tr>
+    </table>
+
+Links:
+  desc: the backbone of the internet
+  textile: |-
+    "An Example Page":http://www.example.com
+  html: |-
+    <a href='http://www.example.com'>An Example Page</a>
+
+Images:
+  desc: for kittens
+  textile: |-
+    !http://www.kittenexpress.com!
+  html: |-
+    <img src='http://www.kittenexpress.com'>
+
+Scripts:
+  desc: ignore all script tags
+  textile: |-
+
+  html: |-
+    <script>pants</script>
