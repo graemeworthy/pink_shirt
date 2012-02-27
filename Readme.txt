@@ -16,8 +16,11 @@ RedCloth https://github.com/jgarber/redcloth
 
 Usage
 ============================
-text = "This is <em>my</em> text."
-RedCloth.new(text).to_html
+text =  "This is *my* text."
+html = RedCloth.new(text).to_html
+same = PinkShirt.new(html).to_textile
+same #=> "This is *my* text."
+
 
 
 
