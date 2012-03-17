@@ -1,32 +1,33 @@
 h1. Pink Shirt
 
-*wash out all that RedCloth* 
-
-
-I had a problem: some html needed to be textile
-
-None of the available options could get back to exactly where you started.
-They weren't 'reversable'
-
-I learned a lot by reading other's who went before.
-I've looked at: html2texile https://github.com/thickpaddy/html2textile
-I've looked at: clothred https://github.com/CynicalRyan/ClothRed
-I've looked at: a deeply buried module in humpyard https://github.com/humpyard/humpyard
-
-This library still has some problems with whitespace management, but the majority of the the tags convert.
-
-It's based around https://github.com/textile/textile-spec
-and built to produce mirror images of html produced by
-RedCloth https://github.com/jgarber/redcloth
+ *wash out all that RedCloth* 
 
 h2. Usage
 
-bc. #example:
-text =  "This is *my* text."
+bc. text =  "This is *my* text."
 html = RedCloth.new(text).to_html
 same = PinkShirt.new(html).to_textile
 same #=> "This is *my* text."
 
+h2. Motivation
+
+I had a problem: some html needed to be textile
+
+None of the available options could get back to exactly where you started.
+They weren't 'reversable'.
+
+I learned a lot by reading other's who went before.
+I've looked at: "html2texile":https://github.com/thickpaddy/html2textile
+I've looked at: "clothred":https://github.com/CynicalRyan/ClothRed
+I've looked at: "a deeply buried module in humpyard":https://github.com/humpyard/humpyard
+
+This library still has some problems with whitespace management, but the majority of the the tags convert.
+
+It's based around "textile-spec":https://github.com/textile/textile-spec
+and built to produce mirror images of html produced by
+"RedCloth":https://github.com/jgarber/redcloth
 
 
-"!https://secure.travis-ci.org/graemeworthy/pink_shirt.png!":http://travis-ci.org/graemeworthy/pink_shirt
+
+
+
