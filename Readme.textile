@@ -28,6 +28,6 @@ and built to produce mirror images of html produced by
 "RedCloth":https://github.com/jgarber/redcloth
 
 
-
+"!https://secure.travis-ci.org/graemeworthy/pink_shirt.png!":http://travis-ci.org/graemeworthy/pink_shirt
 
 
