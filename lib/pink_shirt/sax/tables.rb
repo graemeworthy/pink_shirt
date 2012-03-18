@@ -3,8 +3,9 @@ class PinkShirt
     TAGS = %w(table th tr td tbody thead)
 
     def start_table attrs
-       @output << "\n"
-       @output << "table#{add_attributes(attrs)}.\n" if add_attributes(attrs)
+      if add_attributes(attrs)
+       @output << "table#{add_attributes(attrs)}.\n" 
+      end
     end
 
     def end_table
@@ -40,7 +41,7 @@ class PinkShirt
       if add_attributes(attrs)
         @output << "|#{add_attributes(attrs)}. "
       else
-        @output << "| "
+        @output << "|"
       end
     end
 
