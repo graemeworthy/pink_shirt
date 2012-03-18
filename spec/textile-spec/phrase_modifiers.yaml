@@ -10,22 +10,22 @@ Stress emphasis:
       text is typically styled as __italics__.
     input: You didn't actually _believe_ her, did you?
     output: <p>You didn&#8217;t actually <em>believe</em> her, did you?</p>
-# Stylistic offset:
-#   Stylistic offset:
-#     desc: To stylistically differentiate a word or phrase from the surrounding text
-#       *without conveying any extra importance*, place two asterisks on either side.  Uses
-#       are key words in a document abstract, product names in a review, or other
-#       spans of text whose typical typographic presentation is boldened.
-#     input: |-
-#       Search results for **Textile**:
+Stylistic offset in links:
+  Stylistic offset in links:
+    desc: To stylistically differentiate a word or phrase from the surrounding text
+      *without conveying any extra importance*, place two asterisks on either side.  Uses
+      are key words in a document abstract, product names in a review, or other
+      spans of text whose typical typographic presentation is boldened.
+    input: |-
+      Search results for **Textile**:
 
-#       h4. ["**Textile** (markup language) - Wikipedia":http://en.wikipedia.org/wiki/Textile_(markup_language)]
+      h4. "**Textile** (markup language) - Wikipedia":http://en.wikipedia.org/wiki/Textile_(markup_language)
 
-#       **Textile** is a lightweight markup language originally developed by Dean Allen and billed as a "humane Web text generator".  **Textile** converts its marked-up text ...
-#     output: |-
-#       <p>Search results for <b>Textile</b>:</p>
-#       <h4><a href="http://en.wikipedia.org/wiki/Textile_(markup_language)"><b>Textile</b> (markup language) &#8211; Wikipedia</a></h4>
-#       <p><b>Textile</b> is a lightweight markup language originally developed by Dean Allen and billed as a &#8220;humane Web text generator&#8221;.  <b>Textile</b> converts its marked-up text &#8230;</p>
+      **Textile** is a lightweight markup language originally developed by Dean Allen and billed as a "humane Web text generator".  **Textile** converts its marked-up text ...
+    output: |-
+      <p>Search results for <b>Textile</b>:</p>
+      <h4><a href="http://en.wikipedia.org/wiki/Textile_(markup_language)"><b>Textile</b> (markup language) &#8211; Wikipedia</a></h4>
+      <p><b>Textile</b> is a lightweight markup language originally developed by Dean Allen and billed as a &#8220;humane Web text generator&#8221;.  <b>Textile</b> converts its marked-up text &#8230;</p>
 Stylistic offset:
   Stylistic offset:
     desc: To stylistically differentiate a word or phrase from the surrounding text
