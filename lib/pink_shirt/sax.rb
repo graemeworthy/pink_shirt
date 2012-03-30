@@ -1,7 +1,7 @@
 class PinkShirt
   # SAX inherits from nokogiri's SAX::Document class
   # I'd recommend you visit nokogiri's documentation to learn more.
-  # 
+  #
   # here's the gist.
   # each time the parser encounter's an opening tag it fires an event 'start_element'
   # each time the parser encounters a closing tag it fires an even 'end_element'
@@ -11,8 +11,8 @@ class PinkShirt
   # and a call to #end_html when </html> is reached, same for all the other tags
   #
   # each of the processors are classes that are responsible for a specific subset of tags
-  
-  
+
+
   class SAX < Nokogiri::XML::SAX::Document
     def initialize(fail_on_unknown=false)
       @fail_on_unknown = fail_on_unknown
@@ -52,12 +52,13 @@ class PinkShirt
 
     def start_element name, attrs = []
       attrs = Hash[attrs]
-      get_processor(name).send("start_#{name}", attrs)
+      processor = get_processor(name)
+      processor.send("start_#{name}", attrs) if processor
     end
 
     def end_element name
-      get_processor(name).send("end_#{name}")
-
+      processor = get_processor(name)
+      get_processor(name).send("end_#{name}") if processor
     end
 
     def characters(string)

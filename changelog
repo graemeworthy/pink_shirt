@@ -1,7 +1,9 @@
+0.0.4
+ - doesn't die on unrecognised tags
 0.0.3
  - was choking on tbody
  - added allowance for tbody and thead
-0.0.2 
+0.0.2
   whitespace and documentation formatting
-0.0.1 
+0.0.1
  intial release
