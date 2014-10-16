@@ -2,6 +2,8 @@ h1. Pink Shirt
 
  *wash out all that RedCloth* 
 
+h2. It reverses the HTML back into textile
+
 h2. Usage
 
 bc. text =  "This is *my* text."
